@@ -43,6 +43,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
+        var_dump($request->all());
     }
 
     /**
