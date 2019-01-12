@@ -19,7 +19,7 @@ class StudentController extends Controller
     public function index()
     {
         //
-        $students = Student::get();
+        $students = Student::paginate(5);
         return view("student.index", compact("students"));
     }
 
@@ -43,7 +43,13 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
-        var_dump($request->all());
+        $request->validate([
+            "name"  => 'required|min:4',
+            'address'   => 'required|min:4'
+        ]);
+        Student::insert($request->except('_token'));
+        return redirect()->route("students.index");
+
     }
 
     /**

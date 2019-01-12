@@ -36,6 +36,7 @@
 						@endforeach
 					</tbody>
 				</table>
+				{{ $students->links() }}
 				
 				@else
 					<h2>No Students</h2>
