@@ -9,7 +9,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<button class="btn btn-success">Create Student</button>
+				<br>
+				<br>
+				<a class="btn btn-success" href="{{ route('students.create') }}">Create Student</a>
 				<hr>
 				@if($students->count() > 0)
 					<table class="table table-striped">
