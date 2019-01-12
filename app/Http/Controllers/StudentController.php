@@ -19,7 +19,8 @@ class StudentController extends Controller
     public function index()
     {
         //
-        return view("student.index");
+        $students = Student::get();
+        return view("student.index", compact("students"));
     }
 
     /**

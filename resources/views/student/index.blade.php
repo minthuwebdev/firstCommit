@@ -11,15 +11,34 @@
 			<div class="col-12">
 				<button class="btn btn-success">Create Student</button>
 				<hr>
-				<table class="table table-striped">
+				@if($students->count() > 0)
+					<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>ID</th>
 							<th>Name</th>
 							<th>Address</th>
+							<th></th>
+							<th></th>
 						</tr>
 					</thead>
+					<tbody>
+						@foreach($students as $student)
+							<tr>
+								<td>{{ $student->id }}</td>
+								<td>{{ $student->name }}</td>
+								<td>{{ $student->address }}</td>
+								<td><button class="btn btn-primary">Edit</button></td>
+								<td><button class="btn btn-danger">Delete</button></td>
+							</tr>
+						@endforeach
+					</tbody>
 				</table>
+				
+				@else
+					<h2>No Students</h2>
+				@endif
+				
 			</div>
 		</div>
 	</div>
