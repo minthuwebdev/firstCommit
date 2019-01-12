@@ -30,7 +30,7 @@
 								<td>{{ $student->id }}</td>
 								<td>{{ $student->name }}</td>
 								<td>{{ $student->address }}</td>
-								<td><button class="btn btn-primary">Edit</button></td>
+								<td><a href="{{ route('students.edit', $student->id) }}"><button class="btn btn-primary">Edit</button></a></td>
 								<td><button class="btn btn-danger">Delete</button></td>
 							</tr>
 						@endforeach

@@ -43,10 +43,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            "name"  => 'required|min:4',
-            'address'   => 'required|min:4'
-        ]);
+        $request->validate(Student::$rules);
         Student::insert($request->except('_token'));
         return redirect()->route("students.index");
 
@@ -61,6 +58,7 @@ class StudentController extends Controller
     public function show(Student $student)
     {
         //
+        dd($student);
     }
 
     /**
@@ -72,6 +70,7 @@ class StudentController extends Controller
     public function edit(Student $student)
     {
         //
+        return view("student.edit", compact("student"));
     }
 
     /**
@@ -84,6 +83,9 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
         //
+        $request->validate(Student::$rules);
+        $student->update($request->except("_token"));
+        return redirect()->route("students.index");
     }
 
     /**
