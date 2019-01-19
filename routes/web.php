@@ -31,6 +31,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource("students", "StudentController")->middleware("auth");
 
+Route::get("/products/{first_param?}", "ProductController@index")->name("products.index");
+
 
 
 
