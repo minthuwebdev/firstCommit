@@ -50886,18 +50886,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
+/* harmony import */ var _components_BlogComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/BlogComponent.vue */ "./resources/js/components/BlogComponent.vue");
+/* harmony import */ var _components_TestComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TestComponent.vue */ "./resources/js/components/TestComponent.vue");
+
+
+
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var routes = [{
   path: "/products",
-  component: vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default)
+  component: vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', _components_ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"])
 }, {
   path: "/products/blog",
-  component: vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('blog-component', __webpack_require__(/*! ./components/BlogComponent.vue */ "./resources/js/components/BlogComponent.vue").default)
+  component: vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('blog-component', _components_BlogComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"])
 }, {
   path: "/products/test",
-  component: vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('test-component', __webpack_require__(/*! ./components/TestComponent.vue */ "./resources/js/components/TestComponent.vue").default)
+  component: vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('test-component', _components_TestComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"])
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   hashband: false,

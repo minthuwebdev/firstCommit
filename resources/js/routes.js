@@ -1,20 +1,23 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import ExampleComponent from './components/ExampleComponent.vue';
+import BlogComponent from './components/BlogComponent.vue';
+import TestComponent from './components/TestComponent.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
 	{
 		path: "/products",
-		component: Vue.component('example-component', require('./components/ExampleComponent.vue').default)
+		component: Vue.component('example-component', ExampleComponent)
 	},
 	{
 		path: "/products/blog",
-		component: Vue.component('blog-component', require('./components/BlogComponent.vue').default )
+		component: Vue.component('blog-component', BlogComponent )
 	},
 	{
 		path: "/products/test",
-		component: Vue.component('test-component', require('./components/TestComponent.vue').default)
+		component: Vue.component('test-component', TestComponent)
 	}
 ];
 
