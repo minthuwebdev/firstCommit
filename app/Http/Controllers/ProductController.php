@@ -16,4 +16,10 @@ class ProductController extends Controller
     	$students = Student::get();
     	return $students;
     }
+
+    public function createStudent(Request $request) {
+    	Student::insert($request->all());
+    	return "success";
+
+    }
 }

@@ -7,19 +7,55 @@
 			@endforeach -->
 			<div class="form-group">
 				<label for="name">Name :</label>
-				<input name="name" type="text" class="form-control" id="student_name" placeholder="You Name" value="">
+				<input v-model="name" name="name" type="text" class="form-control" id="student_name" placeholder="You Name" value="">
   
 			</div>
 			<div class="form-group">
 				<label for="address">Example textarea</label>
-				<textarea name="address" class="form-control" id="student_address" rows="3" placeholder="You address"></textarea>
+				<textarea v-model="address" name="address" class="form-control" id="student_address" rows="3" placeholder="You address"></textarea>
 				
 					<small class="form-text text-danger">
 						
 					</small>
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button @click.prevent="createStudent()" type="submit" class="btn btn-primary">Submit</button>
 		</form>
 		</div>
 	</div>
 </template>
+<script>
+    export default {
+    	data() {
+    		return {
+    			name: "",
+    			address: ""
+    		}
+    	},
+    	mounted() {
+
+    	},
+    	methods: {
+    		createStudent: function() {
+    			axios.post('/api/students/create', {
+    				name: this.name,
+    				address: this.address
+  				})
+  				.then(function (response) {
+    				redirect: { name: "example-component" }
+  				})
+  				.catch(function (error) {
+    				console.log(error)
+  				});
+
+    		}
+    	}
+
+    }
+</script>
+
+
+
+
+
+
+
