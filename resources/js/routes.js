@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import ExampleComponent from './components/ExampleComponent.vue';
 import BlogComponent from './components/BlogComponent.vue';
 import TestComponent from './components/TestComponent.vue';
+import ProductCreateComponent from './components/ProductCreateComponent.vue';
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,10 @@ const routes = [
 	{
 		path: "/products/test",
 		component: Vue.component('test-component', TestComponent)
+	},
+	{
+		path: "/products/create",
+		component: Vue.component("product-create", ProductCreateComponent)
 	}
 ];
 
