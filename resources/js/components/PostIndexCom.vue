@@ -7,7 +7,7 @@
 			<router-link to="/posts/create" class="btn btn-success">Create Post</router-link> 
 			<br>
 			<br>
-			<div v-if="posts.length > 0">
+			<div v-if="posts.total > 0">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -17,13 +17,15 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr v-for="post in posts">
+						<tr v-for="post in posts.data">
 							<td>{{ post.id }}</td>
 							<td>{{ post.title }}</td>
 							<td>{{ post.category_id }}</td>
 						</tr>
 					</tbody>
 				</table>
+
+			<pagination :data="posts" @pagination-change-page="getPosts"></pagination>
 			</div>
 			<div v-else>
 				<br>
@@ -37,13 +39,21 @@
 	export default {
         data() {
             return {
-                posts: []
+                posts: {}
             }
         },
         mounted() {
-            axios.get("api/posts")
-            .then(response => this.posts = response.data)
-        }
+            this.getPosts()
+		},
+		methods: {
+			getPosts(page = 1) {
+				axios.get("api/posts?page=" + page)
+            		.then(response => {
+						console.log(response.data)
+						this.posts = response.data
+					})
+			}
+		}
     }
 
 </script>

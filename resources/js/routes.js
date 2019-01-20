@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import NPProgress from "./nprogress";
 import ExampleComponent from './components/ExampleComponent.vue';
 import BlogComponent from './components/BlogComponent.vue';
 import TestComponent from './components/TestComponent.vue';
@@ -48,5 +49,16 @@ const router = new VueRouter({
 	mode: "history",
 	routes
 });
+
+router.beforeResolve((to, from, next) => {
+	if(to.name) {
+		NPProgress.start()
+	}
+	next()
+})
+
+router.afterEach((to, from) => {
+	NPProgress.done()
+})
 
 export default router;

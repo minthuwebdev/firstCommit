@@ -13,7 +13,7 @@ class PostController extends Controller
     }
 
     public function getPosts() {
-    	$posts = Post::get();
+    	$posts = Post::paginate(4);
     	return $posts;
     }
 
