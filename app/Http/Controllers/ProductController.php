@@ -18,8 +18,9 @@ class ProductController extends Controller
     }
 
     public function createStudent(Request $request) {
+        $request->validate(Student::$rules);
     	Student::insert($request->all());
-    	return "success";
+    	return ["message" => "success"];
 
     }
 }

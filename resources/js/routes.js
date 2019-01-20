@@ -4,25 +4,41 @@ import ExampleComponent from './components/ExampleComponent.vue';
 import BlogComponent from './components/BlogComponent.vue';
 import TestComponent from './components/TestComponent.vue';
 import ProductCreateComponent from './components/ProductCreateComponent.vue';
+import PostIndexCom from './components/PostIndexCom.vue';
+import PostCreateCom from "./components/PostCreateCom.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
 	{
 		path: "/products",
-		component: Vue.component('example-component', ExampleComponent)
+		name: "example-component",
+		component: ExampleComponent
 	},
 	{
 		path: "/products/blog",
-		component: Vue.component('blog-component', BlogComponent )
+		name: "blog-component",
+		component: BlogComponent
 	},
 	{
 		path: "/products/test",
-		component: Vue.component('test-component', TestComponent)
+		name: "test-component",
+		component: TestComponent
 	},
 	{
 		path: "/products/create",
-		component: Vue.component("product-create", ProductCreateComponent)
+		name: "product-create",
+		component: ProductCreateComponent
+	},
+	{
+		path: "/posts",
+		name: "post-index",
+		component: PostIndexCom
+	},
+	{
+		path: "/posts/create",
+		name: "posts-create",
+		component: PostCreateCom
 	}
 ];
 

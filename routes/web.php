@@ -33,6 +33,8 @@ Route::resource("students", "StudentController")->middleware("auth");
 
 Route::get("/products/{first_param?}/{second_param?}", "ProductController@index")->name("products.index");
 
+Route::get("/posts/{first_param?}/{second_param?}", "PostController@index")->name("posts.index");
+
 
 
 
