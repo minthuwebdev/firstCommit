@@ -16,3 +16,21 @@ mix.js('resources/js/app.js', 'public/js')
 mix.styles([
    "resources/css/nprogress.css"
 ], "public/css/nprogress.css");
+mix.styles([
+	"resources/css/bootstrap.min.css",
+	"resources/css/font-awesome.min.css",
+	"resources/css/ionicons.min.css",
+	"resources/css/AdminLTE.min.css",
+	"resources/css/blue.css"
+	], "public/css/main.css");
+
+
+
+
+
+
+
+
+
+
+

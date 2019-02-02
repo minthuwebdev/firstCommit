@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get("/test_id", function() {
+	return date();
+});
+
 Route::get("password", function() {
 	$password = "123456";
 	var_dump(md5($password) . "<br>");
@@ -26,6 +30,10 @@ Route::get("password", function() {
 });
 
 Auth::routes();
+
+// Auth Route
+// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

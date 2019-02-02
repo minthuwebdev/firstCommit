@@ -21,6 +21,7 @@
 							<td>{{ post.id }}</td>
 							<td>{{ post.title }}</td>
 							<td>{{ post.category_id }}</td>
+							
 						</tr>
 					</tbody>
 				</table>
