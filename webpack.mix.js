@@ -23,6 +23,11 @@ mix.styles([
 	"resources/css/AdminLTE.min.css",
 	"resources/css/blue.css"
 	], "public/css/main.css");
+mix.scripts([
+	"resources/js/jquery.min.js",
+	"resources/js/bootstrap.min.js",
+	"resources/js/icheck.min.js",
+	], "public/js/main.js");
 
 
 
