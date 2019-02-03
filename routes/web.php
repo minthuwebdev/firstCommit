@@ -46,6 +46,8 @@ Route::get("/posts/{first_param?}/{second_param?}", "PostController@index")->nam
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name("github-login");
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::resource("front", 'FrontController');
+
 
 
 
