@@ -71,8 +71,8 @@
         <p>- OR -</p>
         <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
         Facebook</a>
-        <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-        Google+</a>
+        <a href="{{ route('github-login', 'github') }}" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-github"></i> Sign in using
+        GitHub</a>
       </div>
       <!-- /.social-auth-links -->
 

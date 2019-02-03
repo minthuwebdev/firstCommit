@@ -43,6 +43,9 @@ Route::get("/products/{first_param?}/{second_param?}", "ProductController@index"
 
 Route::get("/posts/{first_param?}/{second_param?}", "PostController@index")->name("posts.index");
 
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name("github-login");
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
 
 
 
