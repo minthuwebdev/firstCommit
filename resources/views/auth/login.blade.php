@@ -53,11 +53,12 @@
         </div>
         <div class="row">
           <div class="col-xs-8">
-            <div class="checkbox icheck">
+            <div class="form-check checkbox icheck">
               <label>
                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>Remember Me
               </label>
             </div>
+
           </div>
           <!-- /.col -->
           <div class="col-xs-4">
@@ -76,8 +77,8 @@
       </div>
       <!-- /.social-auth-links -->
 
-      <a href="#">I forgot my password</a><br>
-      <a href="register.html" class="text-center">Register a new membership</a>
+      <a href="{{ route('password.request') }}">I forgot my password</a><br>
+      <a href="register" class="text-center">Register a new membership</a>
 
     </div>
     <!-- /.login-box-body -->
@@ -86,6 +87,7 @@
 
   <!-- jQuery 3 -->
   <script src="{{asset('js/main.js')}}"></script>
+  <script src="{{ asset('js/app.js') }}" ></script>
   <script>
     $(function () {
       $('input').iCheck({
