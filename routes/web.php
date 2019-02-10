@@ -48,6 +48,10 @@ Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCall
 
 Route::resource("front", 'FrontController');
 
+Route::get("file-upload", "FileController@getFile")->name("get-file");
+
+Route::post("file-upload", "FileController@uploadFile")->name("post-file");
+
 
 
 
