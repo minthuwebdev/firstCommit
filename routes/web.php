@@ -52,6 +52,14 @@ Route::get("file-upload", "FileController@getFile")->name("get-file");
 
 Route::post("file-upload", "FileController@uploadFile")->name("post-file");
 
+Route::get("backend", "BackLoginController@getLogin")->name("backend.get");
+
+Route::post("backend", "BackLoginController@postLogin")->name("backend.post");
+
+Route::get("backend/logout", "BackLoginController@logout")->name("backend.logout");
+
+Route::resource("dashboard", 'BackendController');
+
 
 
 
