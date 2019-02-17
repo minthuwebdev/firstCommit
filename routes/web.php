@@ -60,6 +60,8 @@ Route::get("backend/logout", "BackLoginController@logout")->name("backend.logout
 
 Route::resource("dashboard", 'BackendController');
 
+Route::resource("items", 'ItemController');
+
 
 
 
