@@ -16,7 +16,7 @@
 					<input type="text" name="count" value="10">
 					<input type="text" name="price" value="2300">
 					<br>
-					<select multiple class="form-control" id="select-categories" name="categories[]">
+					<select multiple class="form-control" id="select-categories" name="category_id[]">
 					@foreach($categories as $key=>$value) 
 						<option value={{ $key }}>
 							{{ $value }}

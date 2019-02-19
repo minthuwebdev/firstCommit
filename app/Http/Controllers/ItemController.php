@@ -45,6 +45,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         //
+        // $category_id[];
         $request->validate([
             'name'  => 'required'
         ]);
@@ -55,10 +56,11 @@ class ItemController extends Controller
         $item->price = $request->price;
         $item->save();
 
-        foreach ($request->categories as $category) {
-            $cat = Category::find($category);
-            $item->categories()->attach($cat);
-        }
+// dd($request->category_id);
+        // foreach ($request->categories as $category) {
+        //     $cat = Category::find($category);
+            $item->categories()->sync($request->category_id);
+        // }
         
 
     }
